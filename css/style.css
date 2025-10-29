@@ -1,6 +1,19 @@
 body {
     font-family: sans-serif;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 header {
@@ -25,50 +38,51 @@ nav a {
     text-decoration: none;
 }
 
-main {
-    padding: 1rem;
-}
-
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
-    width: 100%;
 }
 
 .posts {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .posts {
-        flex-direction: column;
-    }
 }
 
 .post {
     border: 1px solid #ccc;
-    padding: 1rem;
     border-radius: 5px;
-    flex: 1;
-    min-width: 300px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
 
-@media (max-width: 768px) {
-    .post {
-        min-width: auto;
-        width: 100%;
-    }
+.post:hover {
+    transform: translateY(-5px);
 }
 
 .post img {
-    max-width: 100%;
+    width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+}
+
+.post h2 {
+    padding: 0 1rem;
+}
+
+.post p {
+    padding: 0 1rem;
+}
+
+.post a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
 }
