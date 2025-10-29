@@ -34,22 +34,41 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    position: absolute;
-    bottom: 0;
+    margin-top: 2rem;
     width: 100%;
 }
 
 .posts {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .posts {
+        flex-direction: column;
+    }
 }
 
 .post {
     border: 1px solid #ccc;
     padding: 1rem;
     border-radius: 5px;
+    flex: 1;
+    min-width: 300px;
+}
+
+@media (max-width: 768px) {
+    .post {
+        min-width: auto;
+        width: 100%;
+    }
 }
 
 .post img {
     max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }
